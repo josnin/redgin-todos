@@ -14,6 +14,7 @@ export default class Todos extends RedGin {
     if (inputElement) {
       this.todos = [...this.todos, { text: inputElement.value, done: false }];
       inputElement.value = '';
+      inputElement.focus();
     }
   }
 
