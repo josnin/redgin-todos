@@ -36,8 +36,8 @@ export default class Todos extends RedGin {
 
       ${watch(
         ['todos'],
-        () => html`
-          ${this.todos.map( (todo: ITodo, index: number) => ` 
+        () => `
+          ${this.todos.map( (todo: ITodo, index: number) => html` 
               <p>
                 <input 
                   type="checkbox" 
