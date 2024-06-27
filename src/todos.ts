@@ -30,28 +30,28 @@ export default class Todos extends RedGin {
   // Render method using html template literals
   render() {
     return html`
-    <h2>Todos</h2>
-    <input/>
-    <button ${event('click', () => this.add())} >Add</button>
+      <h2>Todos</h2>
+      <input/>
+      <button ${event('click', () => this.add())} >Add</button>
 
-    ${watch(
-      ['todos'],
-      () => html`
-        ${this.todos.map( (todo: ITodo, index: number) => ` 
-            <p>
-              <input 
-                type="checkbox" 
-                ${event('change', () => this.toggle(index))}  
-                ${todo.done ? 'checked' : ''}/>
-                  ${todo.done ? `<s>${todo.text}</s>` : `<span>${todo.text}</span>`}
-            </p>
-            
-        `).join('')}
-      `
-    )}
+      ${watch(
+        ['todos'],
+        () => html`
+          ${this.todos.map( (todo: ITodo, index: number) => ` 
+              <p>
+                <input 
+                  type="checkbox" 
+                  ${event('change', () => this.toggle(index))}  
+                  ${todo.done ? 'checked' : ''}
+                />
+                    
+                ${todo.done ? `<s>${todo.text}</s>` : `<span>${todo.text}</span>`}
+              </p>
+              
+          `).join('')}
+        `
+      )}
     
-
-   
     `;
   }
 }
