@@ -21,7 +21,7 @@ export default class Todos extends RedGin {
     this.todos = this.todos.map((todo, i) =>
       i === index ? { ...todo, done: !todo.done } : todo
     ); // Efficient in-place update using map
-        // should make the this.updateContents  public?
+        // TODO: should we call forceUpdate here instead of doing this way?
   }
 
 
